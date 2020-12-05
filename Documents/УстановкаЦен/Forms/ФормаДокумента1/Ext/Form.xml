@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.7">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ТипЦены" id="7">
+			<DataPath>Объект.ТипЦены</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТипЦеныКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТипЦеныРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Button name="Печать" id="32">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.Печать</CommandName>
+			<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="33"/>
+		</Button>
+		<Table name="ТоварИЦена" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТоварИЦена</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТоварИЦенаКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ТоварИЦенаКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="ТоварИЦенаРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ТоварИЦенаСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ТоварИЦена</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварИЦенаСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТоварИЦенаСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТоварИЦенаСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ТоварИЦена</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварИЦенаСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТоварИЦенаСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТоварИЦенаУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ТоварИЦена</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварИЦенаУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТоварИЦенаУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТоварИЦенаНомерСтроки" id="23">
+					<DataPath>Объект.ТоварИЦена.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварИЦенаНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТоварИЦенаНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ТоварИЦенаТовар" id="26">
+					<DataPath>Объект.ТоварИЦена.Товар</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварИЦенаТоварКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТоварИЦенаТоварРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ТоварИЦенаЦена" id="29">
+					<DataPath>Объект.ТоварИЦена.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварИЦенаЦенаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТоварИЦенаЦенаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УстановкаЦен</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Печать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Печать</Action>
+		</Command>
+	</Commands>
+</Form>

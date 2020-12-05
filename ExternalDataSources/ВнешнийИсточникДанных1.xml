@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.7">
+	<ExternalDataSource uuid="ab42cf2b-436e-4efe-9333-8bc692d5fe08">
+		<InternalInfo>
+			<xr:GeneratedType name="ExternalDataSourceManager.ВнешнийИсточникДанных1" category="Manager">
+				<xr:TypeId>bfa7a500-636b-489a-a5b4-0d6892698109</xr:TypeId>
+				<xr:ValueId>8998f6af-7a23-416f-ae92-8b909defe79c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExternalDataSourceTablesManager.ВнешнийИсточникДанных1" category="TablesManager">
+				<xr:TypeId>45873ade-ee6b-483b-80a3-33c63b914252</xr:TypeId>
+				<xr:ValueId>730a054b-aea9-4cc8-8485-4bba13133f0c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExternalDataSourceCubesManager.ВнешнийИсточникДанных1" category="CubesManager">
+				<xr:TypeId>13cd01ca-2149-4aaa-bcca-26409feec713</xr:TypeId>
+				<xr:ValueId>ece22a0b-6052-405d-b2b2-2f115ebaa0d4</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ВнешнийИсточникДанных1</Name>
+			<Synonym/>
+			<Comment/>
+			<DataLockControlMode>Automatic</DataLockControlMode>
+		</Properties>
+		<ChildObjects>
+			<Function uuid="9659c33d-3d38-43f8-9fba-5e286eeb03af">
+				<Properties>
+					<Name>Функция1</Name>
+					<Synonym/>
+					<Comment/>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>USE [kursy_test]
+ GO
+ CREATE PROCEDURE insert_nomenklatura
+ @id int,
+ @description nvarchar(150),
+ @price numeric(15, 2)
+ AS
+ BEGIN
+ INSERT INTO [kursy_test].dbo.[nomenklatura] ([id], [description] ,[price])
+ VALUES (@id, @description, @price)
+ END
+ GO</ExpressionInDataSource>
+				</Properties>
+			</Function>
+			<Function uuid="93bbaaf6-48f2-4dd3-bbc3-2436075efab7">
+				<Properties>
+					<Name>Функция2</Name>
+					<Synonym/>
+					<Comment/>
+					<ReturnValue>true</ReturnValue>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<ExpressionInDataSource>USE [kursy_test]
+ GO
+ CREATE PROCEDURE update_nomenklatura
+ @id int,
+ @description nvarchar(150),
+ @price numeric(15, 2)
+ AS
+ BEGIN
+ UPDATE [kursy_test].dbo.[nomenklatura]
+ SET [description]=@description,[price]=@price
+ WHERE [id]=@id
+ END
+ GO</ExpressionInDataSource>
+				</Properties>
+			</Function>
+		</ChildObjects>
+	</ExternalDataSource>
+</MetaDataObject>
